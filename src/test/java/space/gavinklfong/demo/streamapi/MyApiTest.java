@@ -33,17 +33,7 @@ public class MyApiTest {
 
     @Autowired
     private ProductRepo productRepo;
-
-    @Test
-    @DisplayName("Obtain a list of product with category = \"Books\" and price > 100")
-    void excercise1() {
-        List<Product> productList = productRepo.findAll()
-                .stream()
-                .filter(s -> s.getCategory().equalsIgnoreCase("Books"))
-                .filter(s -> s.getPrice() > 100)
-                .collect(Collectors.toList());
-        productList.forEach(System.out::println);
-    }
+    
 
     @Test
     @DisplayName("Obtain a list of product with category = \"Books\" and price > 100 (using Predicate chaining for filter)")
